@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   before_filter :authenticate, :except => [:show]
-
+  
   # GET /pages
   # GET /pages.json
   def index
@@ -83,4 +83,5 @@ class PagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 end

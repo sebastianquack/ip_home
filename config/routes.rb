@@ -1,6 +1,8 @@
 IpHome::Application.routes.draw do
 
-	resources :pages, :only => :show, :path => ''
+  scope "(:locale)", :locale => /en|de/, :as => :public do
+		resources :pages, :only => [:show, :update], :path => ''
+	end
 
   scope "admin" do
 		resources :pages

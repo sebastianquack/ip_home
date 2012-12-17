@@ -12,17 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title_en %><br />
+    <%= f.text_field :title_en %>
   </div>
   <div class="field">
-    <%= f.label :slug %><br />
-    <%= f.text_field :slug %>
+    <%= f.label :title_de %><br />
+    <%= f.text_field :title_de %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_en %><br />
+    <%= f.text_area :content_en %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.label :content_de %><br />
+    <%= f.text_area :content_de %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216232135) do
+ActiveRecord::Schema.define(:version => 20121217152440) do
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
+    t.string   "title_en"
     t.string   "slug"
-    t.text     "content"
+    t.text     "content_en"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "title_de"
+    t.text     "content_de"
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
