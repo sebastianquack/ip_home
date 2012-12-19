@@ -8,9 +8,11 @@
 </head>
 <body>
 
-<div id="main_navigation">
-	<%= render :partial => "layouts/navigation" %>
-</div>
+<% if params[:action] == 'show' %>
+	<div id="main_navigation">
+		<%= render :partial => "layouts/navigation" %>
+	</div>
+<% end %>
 <div id="main_content">
 	<%= yield %>
 </div>

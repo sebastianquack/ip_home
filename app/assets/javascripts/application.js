@@ -18,12 +18,12 @@
 function reset_navigation_events() {
 		$('#language_selector').unbind('change');
 		$('#language_selector').change(function() {
-			var new_locale = $('#language_selector').val();
-			var base_url = window.location.protocol + '//' + window.location.host + '/';
-			var new_url =  base_url + new_locale + window.location.pathname.substr(3);
-			$('#main_content').load(new_url);
-			History.pushState(null, null, new_url);
-			$('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
+				var new_locale = $('#language_selector').val();
+				var base_url = window.location.protocol + '//' + window.location.host + '/';
+				var new_url =  base_url + new_locale + window.location.pathname.substr(3);
+				$('#main_content').load(new_url);
+				History.pushState(null, null, new_url);
+				$('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
 		});
 }
 
