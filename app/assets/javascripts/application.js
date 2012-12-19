@@ -21,13 +21,13 @@ function reset_navigation_events() {
 				var new_locale = $('#language_selector').val();
 				var base_url = window.location.protocol + '//' + window.location.host + '/';
 				var new_url =  base_url + new_locale + window.location.pathname.substr(3);
-				History.pushState(null, null, new_url);				
+				History.pushState(null, document.title, new_url);				
 		});
 
 		$('.nav_ajax').unbind('click');
 		$('.nav_ajax').click(function(event) {
 				  event.preventDefault();
-					History.pushState(null, null, $(this).attr("href"));
+					History.pushState(null, document.title, $(this).attr("href"));
 		});
 }
 
