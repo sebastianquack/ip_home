@@ -15,6 +15,18 @@
 //= require jquery.history.js
 //= require_tree .
 
+function reset_navigation_events() {
+		$('#language_selector').unbind('change');
+		$('#language_selector').change(function() {
+			var new_locale = $('#language_selector').val();
+			var base_url = window.location.protocol + '//' + window.location.host + '/';
+			var new_url =  base_url + new_locale + window.location.pathname.substr(3);
+			$('#main_content').load(new_url);
+			History.pushState(null, null, new_url);
+			$('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
+		});
+}
+
 (function(window,undefined){
 
     // Prepare
@@ -30,9 +42,17 @@
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
         History.log(State.data, State.title, State.url);
-        
         $('#main_content').load(State.url);
         
+				var base_url = window.location.protocol + '//' + window.location.host + '/';
+				var new_locale = window.location.pathname.substr(1, 2);
+        $('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
     });
-
+    
 })(window);
+
+$(window).load(function() {
+	reset_navigation_events();
+});
+
+
