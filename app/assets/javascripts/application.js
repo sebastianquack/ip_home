@@ -21,9 +21,13 @@ function reset_navigation_events() {
 				var new_locale = $('#language_selector').val();
 				var base_url = window.location.protocol + '//' + window.location.host + '/';
 				var new_url =  base_url + new_locale + window.location.pathname.substr(3);
-				$('#main_content').load(new_url);
-				History.pushState(null, null, new_url);
-				$('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
+				History.pushState(null, null, new_url);				
+		});
+
+		$('.nav_ajax').unbind('click');
+		$('.nav_ajax').click(function(event) {
+				  event.preventDefault();
+					History.pushState(null, null, $(this).attr("href"));
 		});
 }
 
@@ -41,12 +45,10 @@ function reset_navigation_events() {
     // Bind to StateChange Event
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
-        History.log(State.data, State.title, State.url);
-        $('#main_content').load(State.url);
-        
-				var base_url = window.location.protocol + '//' + window.location.host + '/';
-				var new_locale = window.location.pathname.substr(1, 2);
-        $('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
+	        $('#main_content').load(State.url);        
+					var base_url = window.location.protocol + '//' + window.location.host + '/';
+					var new_locale = window.location.pathname.substr(1, 2);
+      	  $('#main_navigation').load(base_url + 'navigation', {'locale': new_locale}, reset_navigation_events);
     });
     
 })(window);

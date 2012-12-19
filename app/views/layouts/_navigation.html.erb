@@ -1,7 +1,7 @@
 <nav>
 <div class="main_nav">
   <% Page.order(:id).each_with_index do |page| %>
-  <%= link_to page.title, public_page_url(page), :remote => true %>
+		<a href="<%= public_page_url(page) %>" class="nav_ajax"><%= page.title %></a>
 <% end %>
 </div>
 
