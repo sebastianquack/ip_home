@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IpHome</title>
+  <title>Invisible Playground</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <% if params[:action] == 'show' %>
-	<div id="main_navigation">
-		<%= render :partial => "layouts/navigation" %>
-	</div>
+	<div id="map"></div>
 <% end %>
 
-<div id="main_content">
-	<%= yield %>
+<div id="content_container">
+
+	<% if params[:action] == 'show' %>
+		<div id="main_navigation">
+			<%= render :partial => "layouts/navigation" %>
+		</div>
+	<% end %>
+	
+	<div id="main_content">
+		<%= yield %>
+	</div>
+
 </div>
 
 </body>

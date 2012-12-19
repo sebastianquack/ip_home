@@ -53,8 +53,7 @@ function reset_navigation_events() {
     
 })(window);
 
-$(window).load(function() {
-	reset_navigation_events();
+$(document).ready(function() {
+		reset_navigation_events();
+		load_map();
 });
-
-
