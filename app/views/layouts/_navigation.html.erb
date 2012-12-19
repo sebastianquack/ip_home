@@ -1,0 +1,19 @@
+<nav>
+<div class="main_nav">
+  <% Page.order(:id).each_with_index do |page| %>
+  <%= link_to page.title, public_page_url(page), :remote => true %>
+<% end %>
+</div>
+
+<div class="language_selection">
+	<select id="language_selector">
+		<% I18n.available_locales.each do |l| %>
+			<option value="<%= l %>"
+				<% if l == I18n.locale %>
+					selected="selected"
+				<% end %>			
+			><%= l %></option>
+		<% end %>
+	</select>
+</div>
+</nav>
