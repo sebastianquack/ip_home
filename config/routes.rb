@@ -1,6 +1,8 @@
 IpHome::Application.routes.draw do
 
   match '/navigation/' => 'navigation#show'
+	match '/map/update' => 'map#update'
+	match '/map/get_position' => 'map#get_position'
 
   scope "(:locale)", :locale => /en|de/, :as => :public do
   	match '' => 'pages#show', :id => 'welcome'

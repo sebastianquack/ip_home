@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217152440) do
+ActiveRecord::Schema.define(:version => 20121221145842) do
+
+  create_table "map_positions", :force => true do |t|
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "ip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title_en"
