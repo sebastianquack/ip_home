@@ -1,0 +1,61 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title_en %><br />
+    <%= f.text_field :title_en %>
+  </div>
+  <div class="field">
+    <%= f.label :title_de %><br />
+    <%= f.text_field :title_de %>
+  </div>
+  <div class="field">
+    <%= f.label :description_short_en %><br />
+    <%= f.text_area :description_short_en %>
+  </div>
+  <div class="field">
+    <%= f.label :description_short_de %><br />
+    <%= f.text_area :description_short_de %>
+  </div>
+  <div class="field">
+    <%= f.label :description_long_en %><br />
+    <%= f.text_area :description_long_en %>
+  </div>
+  <div class="field">
+    <%= f.label :description_long_de %><br />
+    <%= f.text_area :description_long_de %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :client %><br />
+    <%= f.text_field :client %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :in_gallery %><br />
+    <%= f.number_field :in_gallery %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

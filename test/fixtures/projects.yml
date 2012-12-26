@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title_en: MyString
+  title_de: MyString
+  slug: MyString
+  description_short_en: MyText
+  description_short_de: MyText
+  description_long_en: MyText
+  description_long_de: MyText
+  location: MyString
+  time: MyString
+  client: MyString
+  website: MyString
+  in_gallery: 1
+
+two:
+  title_en: MyString
+  title_de: MyString
+  slug: MyString
+  description_short_en: MyText
+  description_short_de: MyText
+  description_long_en: MyText
+  description_long_de: MyText
+  location: MyString
+  time: MyString
+  client: MyString
+  website: MyString
+  in_gallery: 1
