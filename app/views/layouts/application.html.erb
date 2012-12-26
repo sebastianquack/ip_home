@@ -9,13 +9,13 @@
 </head>
 <body>
 
-<% if params[:action] == 'show' && params[:controller] == 'pages' %>
+<% if public? %>
 	<div id="map"></div>
 <% end %>
 
 <div id="content_container">
 
-	<% if params[:action] == 'show' && params[:controller] == 'pages' %>
+	<% if public? %>
 		<div id="main_navigation">
 			<%= render :partial => "layouts/navigation" %>
 		</div>
