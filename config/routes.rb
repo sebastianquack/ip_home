@@ -4,15 +4,16 @@ IpHome::Application.routes.draw do
 	match '/map/update' => 'map#update'
 	match '/map/get_position' => 'map#get_position'
 
+  scope "admin" do
+		get "/", :controller => :admin, :action => :index
+		resources :pages
+		resources :images
+  end
+
   scope "(:locale)", :locale => /en|de/, :as => :public do
   	match '' => 'pages#show', :id => 'welcome'
 		resources :pages, :only => [:show, :update], :path => ''
 	end
-
-  scope "admin" do
-		resources :pages
-		resources :images
-  end
   
   root :to => 'pages#show', :id => 'welcome', :locale => 'en'
   
