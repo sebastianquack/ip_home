@@ -1,5 +1,8 @@
 IpHome::Application.routes.draw do
 
+  resources :projects
+
+
   match '/navigation/' => 'navigation#show'
 	match '/map/update' => 'map#update'
 	match '/map/get_position' => 'map#get_position'
@@ -8,6 +11,7 @@ IpHome::Application.routes.draw do
 		get "/", :controller => :admin, :action => :index
 		resources :pages
 		resources :images
+		resources :projects
   end
 
   scope "(:locale)", :locale => /en|de/, :as => :public do
