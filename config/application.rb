@@ -61,5 +61,6 @@ module IpHome
     
 		config.admin_user = "admin"
     config.admin_password = "vkvdb28"
+    
   end
 end

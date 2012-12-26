@@ -11,6 +11,7 @@ IpHome::Application.routes.draw do
 
   scope "admin" do
 		resources :pages
+		resources :images
   end
   
   root :to => 'pages#show', :id => 'welcome', :locale => 'en'
