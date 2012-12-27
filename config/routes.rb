@@ -9,6 +9,7 @@ IpHome::Application.routes.draw do
 		resources :pages
 		resources :images
 		resources :projects
+		resources :tags
   end
 
   scope ":locale", :locale => /en|de/, :as => :public do
