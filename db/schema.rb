@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226143547) do
+ActiveRecord::Schema.define(:version => 20121226155850) do
 
   create_table "images", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20121226143547) do
     t.integer  "in_gallery"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.integer  "image_id"
   end
 
 end

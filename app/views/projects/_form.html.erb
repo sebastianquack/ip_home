@@ -52,6 +52,10 @@
     <%= f.text_field :website %>
   </div>
   <div class="field">
+  	<%= f.label :image, "Main image" %>
+		<%= f.select :image_id, Image.order("title, image_file_name").collect {|i| [ i.filename_and_title, i.id ] }, { :include_blank => "None" } %>
+	</div>
+  <div class="field">
     <%= f.label :in_gallery %><br />
     <%= f.number_field :in_gallery %>
   </div>

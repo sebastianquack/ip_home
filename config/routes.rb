@@ -11,13 +11,14 @@ IpHome::Application.routes.draw do
 		resources :projects
   end
 
-  scope "(:locale)", :locale => /en|de/, :as => :public do
+  scope ":locale", :locale => /en|de/, :as => :public do
+  	match '/projects/gallery' => 'projects#gallery'
+  	match '/projects/list' => 'projects#list'
   	resources :projects, :only => [:show, :update]
-  	match '' => 'pages#show', :id => 'welcome'
 		resources :pages, :only => [:show, :update], :path => ''
 	end
   
-  root :to => 'pages#show', :id => 'welcome', :locale => 'en'
+  root :to => 'navigation#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

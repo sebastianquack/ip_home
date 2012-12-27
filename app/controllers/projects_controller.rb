@@ -21,6 +21,21 @@ class ProjectsController < ApplicationController
     end
   end
 
+	def gallery
+		@projects = Project.where("in_gallery > 0").order("in_gallery ASC")
+    respond_to do |format|
+      format.html { render :layout => ! request.xhr? }
+    end
+	end	
+
+	def list
+		@projects = Project.all
+		@projects_by_year = @projects.group_by { |p| p.year }
+    respond_to do |format|
+      format.html { render :layout => ! request.xhr? }
+    end
+	end	
+		
   # GET /projects/new
   # GET /projects/new.json
   def new

@@ -1,41 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
+<% if @project.image %>
+  <%= image_tag @project.image.image.url %>
+<% end %>
 
-<p>
-  <b>Description short:</b>
-  <%= @project.description_short %>
-</p>
+<h2><%= @project.title %></h2>
 
-<p>
-  <b>Description long:</b>
-  <%= @project.description_long %>
-</p>
+<p><%= @project.description_short %></p>
 
-<p>
-  <b>Location:</b>
-  <%= @project.location %>
-</p>
+<p><%= @project.description_long %></p>
 
-<p>
-  <b>Year:</b>
-  <%= @project.year %>
-</p>
-
-<p>
-  <b>Client:</b>
-  <%= @project.client %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @project.website %>
-</p>
-
-<!--
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
--->
+<ul>
+  <li>Year: <%= @project.year %></li>
+  <li>Location: <%= @project.location %></li>
+	<li>Client: <%= @project.client %></li>
+  <li>Website: <%= link_to @project.website, @project.website %></li>	
+</ul>

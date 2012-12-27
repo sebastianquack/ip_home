@@ -17,7 +17,7 @@ module ApplicationHelper
 
 	def public?
 		
-		if params[:action] == 'show' && (params[:controller] == 'pages' || params[:controller] == 'projects')
+		if params[:controller] == 'pages' && params[:action] == 'show'
 			return true
 		else 
 			return false

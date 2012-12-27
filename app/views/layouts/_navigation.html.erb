@@ -1,8 +1,16 @@
 <nav>
 <div class="main_nav">
+	<ul>
+		<li><a href="projects/gallery"><%= t("project_gallery") %></a></li>
+		<li><a href="projects/list"><%= t("project_list") %></a></li>
+	</ul>
+	<ul>  
   <% Page.order(:id).each_with_index do |page| %>
-		<a href="<%= public_page_url(page) %>" class="nav_ajax"><%= page.title %></a>
-<% end %>
+  	<li>
+			<a href="<%= public_page_url(page) %>" class="nav_ajax"><%= page.title %></a>
+		</li>
+	<% end %>
+	</ul>
 </div>
 
 <div class="language_selection">
