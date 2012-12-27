@@ -73,6 +73,15 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
 
+		@project.tags = [] # empty tags
+		if params[:project][:tag_ids]
+			params[:project][:tag_ids].each do |tag_id| 
+				tag = Tag.find(tag_id)
+				@project.tags << tag if tag	# add new tags
+			end
+			params[:project].delete(:tag_ids) # do not use in update_attributes below
+		end
+
     respond_to do |format|
       if @project.update_attributes(params[:project])
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }

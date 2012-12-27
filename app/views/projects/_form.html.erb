@@ -59,6 +59,23 @@
     <%= f.label :in_gallery %><br />
     <%= f.number_field :in_gallery %>
   </div>
+
+  <div class="field">	
+  <%= f.label :tags %>
+  <ul>
+  <% Tag.all.each do |tag| %>
+  	<li>
+  		<%= tag.name %>
+  		<input type="checkbox" id="tag_<%= tag.id %>" name="project[tag_ids][]" value="<%= tag.id %>"
+  		<% if @project.tags.exists?(tag) %>
+  			checked="checked"
+  		<% end %>
+  		/>
+  	</li>
+  <% end %>
+  </ul>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

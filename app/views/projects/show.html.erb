@@ -11,6 +11,7 @@
 <p><%= @project.description_long %></p>
 
 <ul>
+  <li>Keywords: <%= render 'taglist', :tags => @project.tags %></li>
   <li>Year: <%= @project.year %></li>
   <li>Location: <%= @project.location %></li>
 	<li>Client: <%= @project.client %></li>

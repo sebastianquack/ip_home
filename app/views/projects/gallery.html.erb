@@ -6,7 +6,8 @@
 			<br/>
 		<% end %>
 		<%= link_to project.title, public_project_url(project) %><br/> 
-		<%= project.description_short %>
+		<%= project.description_short %><br/>
+		Keywords: <%= render 'taglist', :tags => project.tags %>
 	</p>
 <% end %>
 

@@ -16,6 +16,7 @@ IpHome::Application.routes.draw do
   	match '/projects/gallery' => 'projects#gallery'
   	match '/projects/list' => 'projects#list'
   	resources :projects, :only => [:show, :update]
+		resources :tags, :only => [:show]
 		resources :pages, :only => [:show, :update], :path => ''
 	end
   
