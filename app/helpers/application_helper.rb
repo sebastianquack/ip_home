@@ -15,15 +15,4 @@ module ApplicationHelper
     text.html_safe
   end
 
-	def public?
-		
-		if params[:controller] == 'pages' && params[:action] == 'show'
-			return true
-		else 
-			return false
-		end
-	
-	end
-
-
 end

@@ -9,13 +9,13 @@
 </head>
 <body>
 
-<% if public? %>
+<% unless request.path.include?('admin') %>
 	<div id="map"></div>
 <% end %>
 
 <div id="content_container">
 
-	<% if public? %>
+	<% unless request.path.include?('admin') %>
 		<div id="main_navigation">
 			<%= render :partial => "layouts/navigation" %>
 		</div>

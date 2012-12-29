@@ -18,9 +18,9 @@ IpHome::Application.routes.draw do
   end
 
   scope ":locale", :locale => /en|de/, :as => :public do
-  	match '/projects/gallery' => 'projects#gallery'
-  	match '/projects/list' => 'projects#list'
-  	match '/events/list' => 'events#list', :as => 'event_list'
+  	match '/projects/gallery' => 'projects#gallery', :as => 'projects_gallery'
+  	match '/projects/list' => 'projects#list', :as => 'projects_list'
+  	match '/events/list' => 'events#list', :as => 'events_list'
   	match '/events/upcoming' => 'events#upcoming'
   	match '/media_items/list' => 'media_items#list', :as => 'media_items_list'
   	resources :projects, :only => [:show, :update]

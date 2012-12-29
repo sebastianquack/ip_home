@@ -5,7 +5,7 @@
 			<%= image_tag project.image.image.url(:thumb) %>
 			<br/>
 		<% end %>
-		<%= link_to project.title, public_project_url(project) %><br/> 
+		<%= link_to project.title, public_project_url(project), :class=>'content_ajax' %><br/> 
 		<%= project.description_short %><br/>
 		Keywords: <%= render 'taglist', :tags => project.tags %>
 	</p>

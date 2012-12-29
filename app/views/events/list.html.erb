@@ -7,7 +7,7 @@
 		<li>
 			<%= l event.date, :format=>:month_day %>,
 			<%= event.location %>,
-	    <%= link_to event.title, public_event_url(event) %>
+	    <%= link_to event.title, public_event_url(event), :class=>'content_ajax' %>
 		</li>
 	<% end %>
 	</ul>

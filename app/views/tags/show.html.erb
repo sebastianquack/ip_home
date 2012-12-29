@@ -4,6 +4,6 @@
 
 <ul>
 <% @tag.projects.each do |project| %>
-	<li><%= link_to project.title, public_project_url(project) %></li>
+	<li><%= link_to project.title, public_project_url(project), :class=>'content_ajax' %></li>
 <% end %>
 </ul>

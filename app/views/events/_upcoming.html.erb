@@ -4,10 +4,10 @@
 	<li>
 		<%= l event.date, :format=>:short %>,
 		<%= event.location %>,
-    <%= link_to event.title, public_event_url(event) %>
+    <%= link_to event.title, public_event_url(event), :class=>"nav_ajax" %>
 	</li>
 <% end %>
-    <li><%= link_to t("events_list"), public_event_list_url %></li>
+    <li><%= link_to t("events_list"), public_events_list_url, :class=>"nav_ajax" %></li>
 </ul>
 
 

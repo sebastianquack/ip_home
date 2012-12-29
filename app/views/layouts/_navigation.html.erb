@@ -5,9 +5,9 @@
 	</ul>
 
 	<ul>
-		<li><a href="projects/gallery"><%= t("project_gallery") %></a></li>
-		<li><a href="projects/list"><%= t("project_list") %></a></li>
-		<li><a href="media_items/list"><%= t("media_items_list") %></a></li>
+		<li><%= link_to t("project_gallery"), public_projects_gallery_url, :class=>"nav_ajax" %>
+		<li><%= link_to t("project_list"), public_projects_list_url, :class=>"nav_ajax" %>
+		<li><%= link_to t("media_items_list"), public_media_items_list_url, :class=>"nav_ajax"	%>
 	</ul>
 	
 	<ul>  
