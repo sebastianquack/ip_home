@@ -1,6 +1,5 @@
-var map;
-var mapDragging = false;
-var defaultMapCenter = {lat:52.516412, lng:13.402964}; //default value
+mapDragging = false;
+defaultMapCenter = {lat:52.516412, lng:13.402964}; //default value
 
 function update_map() {
 		$.getJSON(baseURL() + 'map/get_position', function(position) {
@@ -32,20 +31,21 @@ function load_map() {
 	  map = new google.maps.Map(document.getElementById('map'), mapOptions);
 	  google.maps.event.addListener(map, 'dragstart', function() { mapDragging = true; });
 	  google.maps.event.addListener(map, 'dragend', mapMoved);
-	  
+
 	  setInterval("update_map()", 2000);
 	});
 
 	resizeWindow();
 	$(window).resize(resizeWindow);
- 	
 }
 
 function resizeWindow(event) {
-	if(($("#content-container").height() + 200) > $(window).height()) {
-		$("#map").height($("#content-container").height() + 200);
+	if($("#content_container").height() > $(window).height()) {
+		$("#map").height($("#content_container").height() + 40);
+		google.maps.event.trigger(map, 'resize');
 	} else {
 		$("#map").height($(window).height());
+		google.maps.event.trigger(map, 'resize');
 	}
 }
 

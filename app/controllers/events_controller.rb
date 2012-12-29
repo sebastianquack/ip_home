@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => ! request.xhr? }
       format.json { render json: @event }
     end
   end

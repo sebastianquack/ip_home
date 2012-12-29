@@ -37,6 +37,8 @@ function reset_content_events() {
 				  event.preventDefault();
 					History.pushState(null, document.title, $(this).attr("href"));
 		});
+		resizeWindow();
+
 }
 
 (function(window,undefined){
@@ -62,5 +64,6 @@ function reset_content_events() {
 
 $(document).ready(function() {
 		reset_navigation_events();
+		reset_content_events();
 		load_map();
 });
