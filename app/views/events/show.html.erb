@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @event.location %>, <%= l @event.date, :format=>:long %>,   <%= l @event.time, :format=>:hours_minutes %><br/>
+
+</p>
+
+<h2><%= @event.title %></h2>
+
+<p>
+  <%= @event.description %>
+</p>
+
+<%= link_to 'More info', @event.url if @event.url? %>

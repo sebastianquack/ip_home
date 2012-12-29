@@ -1,9 +1,15 @@
 <nav>
 <div class="main_nav">
 	<ul>
+		<li><%= render 'events/upcoming', :events => (Event.all :order=>'date ASC', :limit=>3) %></li>
+	</ul>
+
+	<ul>
 		<li><a href="projects/gallery"><%= t("project_gallery") %></a></li>
 		<li><a href="projects/list"><%= t("project_list") %></a></li>
 	</ul>
+	
+	
 	<ul>  
   <% Page.order(:id).each_with_index do |page| %>
   	<li>

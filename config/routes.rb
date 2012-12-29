@@ -10,13 +10,17 @@ IpHome::Application.routes.draw do
 		resources :images
 		resources :projects
 		resources :tags
+		resources :events
   end
 
   scope ":locale", :locale => /en|de/, :as => :public do
   	match '/projects/gallery' => 'projects#gallery'
   	match '/projects/list' => 'projects#list'
+  	match '/events/list' => 'events#list', :as => 'event_list'
+  	match '/events/upcoming' => 'events#upcoming'
   	resources :projects, :only => [:show, :update]
-		resources :tags, :only => [:show]
+		resources :tags, :only => [:show, :update]
+		resources :events, :only => [:show, :update]
 		resources :pages, :only => [:show, :update], :path => ''
 	end
   

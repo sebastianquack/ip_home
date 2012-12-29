@@ -1,3 +1,14 @@
 en:
   project_gallery: Project Gallery
   project_list: All Projects
+  events_upcoming: Upcoming Events
+  events_list: all Events
+  time:
+    formats:
+      hours_minutes: "%l:%M %p"
+  date:
+      formats:
+        weekday: "%A"
+        short: '%e %b %Y'
+        long: '%A, %e %B %Y'
+        month_day: '%B %e'

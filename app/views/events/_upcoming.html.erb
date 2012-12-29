@@ -1,0 +1,13 @@
+<%= t("upcoming_events") %>
+<ul>
+<% events.each do |event| %>
+	<li>
+		<%= l event.date, :format=>:short %>,
+		<%= event.location %>,
+    <%= link_to event.title, public_event_url(event) %>
+	</li>
+<% end %>
+    <li><%= link_to t("events_list"), public_event_list_url %></li>
+</ul>
+
+

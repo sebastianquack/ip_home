@@ -1,0 +1,14 @@
+<h1>All projects by year</h1>
+
+<% @projects_by_year.each do |year, projects| %>
+	<h2><%= year %></h2>
+	<ul>
+	<% projects.each do |project| %>
+		<li>
+			<!--%= image_tag project.image.image.url(:thumb) if project.image %-->
+	    <%= link_to project.title, public_project_url(project) %>
+		</li>
+	<% end %>
+	</ul>
+<% end %>
+

@@ -1,0 +1,15 @@
+<h1>All events by year</h1>
+
+<% @events_by_year.each do |year, events| %>
+	<h2><%= year %></h2>
+	<ul>
+	<% events.each do |event| %>
+		<li>
+			<%= l event.date, :format=>:month_day %>,
+			<%= event.location %>,
+	    <%= link_to event.title, public_event_url(event) %>
+		</li>
+	<% end %>
+	</ul>
+<% end %>
+
