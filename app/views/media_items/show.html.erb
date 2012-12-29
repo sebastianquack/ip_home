@@ -27,7 +27,7 @@
 
 <p>
   <b>Attachment:</b>
-  <%= link_to @media_item.attachment_file_name, @media_item.attachment.url %>
+  <%= link_to @media_item.attachment_file_name, @media_item.attachment.url if @media_item.attachment?%>
 </p>
 
 <%= link_to 'Edit', edit_media_item_path(@media_item) %> |

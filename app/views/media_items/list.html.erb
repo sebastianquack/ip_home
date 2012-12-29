@@ -1,7 +1,7 @@
 <h1>All media items by project</h1>
 
 <% @items_by_project.each do |project, items| %>
-	<h2><%= project.title if project %></h2>
+	<h2><%= project ? project.title : "General" %></h2>
 	<ul>
 	<% items.each do |item| %>
 		<li>

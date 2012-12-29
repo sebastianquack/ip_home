@@ -5,6 +5,6 @@
 <a href="<%= media_item.url %>" target="_blank">
 <%= media_item.source %>
 (<%= l media_item.date, :format=>:short %>)</a>
-<% if media_item.attachment %>
+<% if media_item.attachment? %>
 	Download: <%= link_to media_item.attachment_content_type, media_item.attachment.url %>
 <% end %>
