@@ -1,5 +1,8 @@
 IpHome::Application.routes.draw do
 
+  resources :media_items
+
+
   match '/navigation/' => 'navigation#show'
 	match '/map/update' => 'map#update'
 	match '/map/get_position' => 'map#get_position'
@@ -11,6 +14,7 @@ IpHome::Application.routes.draw do
 		resources :projects
 		resources :tags
 		resources :events
+		resources :media_items
   end
 
   scope ":locale", :locale => /en|de/, :as => :public do
@@ -18,6 +22,7 @@ IpHome::Application.routes.draw do
   	match '/projects/list' => 'projects#list'
   	match '/events/list' => 'events#list', :as => 'event_list'
   	match '/events/upcoming' => 'events#upcoming'
+  	match '/media_items/list' => 'media_items#list', :as => 'media_items_list'
   	resources :projects, :only => [:show, :update]
 		resources :tags, :only => [:show, :update]
 		resources :events, :only => [:show, :update]

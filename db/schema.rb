@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121227180332) do
+ActiveRecord::Schema.define(:version => 20121229133052) do
 
   create_table "events", :force => true do |t|
     t.date     "date"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(:version => 20121227180332) do
     t.string   "ip"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "media_items", :force => true do |t|
+    t.string   "source"
+    t.date     "date"
+    t.text     "quote"
+    t.string   "url"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "project_id"
   end
 
   create_table "pages", :force => true do |t|

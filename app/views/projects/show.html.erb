@@ -17,3 +17,14 @@
 	<li>Client: <%= @project.client %></li>
   <li>Website: <%= link_to @project.website, @project.website %></li>	
 </ul>
+
+<% if @project.media_items %>
+	Media Items:
+	<ul>
+		<% @project.media_items.each do |media_item| %>
+		<li>
+		<%= render :partial=>'media_items/show_single', :locals=>{:media_item=>media_item} %>
+		</li>
+		<% end %>
+	</ul>
+<% end %>

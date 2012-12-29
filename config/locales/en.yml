@@ -3,6 +3,7 @@ en:
   project_list: All Projects
   events_upcoming: Upcoming Events
   events_list: all Events
+  media_items_list: all Media items
   time:
     formats:
       hours_minutes: "%l:%M %p"

@@ -1,0 +1,39 @@
+<%= form_for(@media_item) do |f| %>
+  <% if @media_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@media_item.errors.count, "error") %> prohibited this media_item from being saved:</h2>
+
+      <ul>
+      <% @media_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  	<%= f.label :project, "Project" %>
+		<%= f.select :project_id, Project.order('title_en').collect {|p| [ p.title, p.id ] }, { :include_blank => "None" } %>
+	</div>
+
+  <div class="field">
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :quote %><br />
+    <%= f.text_area :quote %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+	<%= f.file_field :attachment %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

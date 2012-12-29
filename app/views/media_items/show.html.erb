@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @media_item.project.title if @media_item.project %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @media_item.source %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @media_item.date %>
+</p>
+
+<p>
+  <b>Quote:</b>
+  <%= @media_item.quote %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @media_item.url %>
+</p>
+
+<p>
+  <b>Attachment:</b>
+  <%= link_to @media_item.attachment_file_name, @media_item.attachment.url %>
+</p>
+
+<%= link_to 'Edit', edit_media_item_path(@media_item) %> |
+<%= link_to 'Back', media_items_path %>
