@@ -1,8 +1,5 @@
 IpHome::Application.routes.draw do
 
-  resources :media_items
-
-
   match '/navigation/' => 'navigation#show'
 	match '/map/update' => 'map#update'
 	match '/map/get_position' => 'map#get_position'
