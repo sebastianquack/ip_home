@@ -63,7 +63,7 @@ function reset_content_events() {
 })(window);
 
 $(document).ready(function() {
+		load_map();
 		reset_navigation_events();
 		reset_content_events();
-		load_map();
 });

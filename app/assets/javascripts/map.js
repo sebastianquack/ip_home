@@ -35,11 +35,12 @@ function load_map() {
 	  setInterval("update_map()", 2000);
 	});
 
-	resizeWindow();
+	setTimeout(resizeWindow, 200);
 	$(window).resize(resizeWindow);
 }
 
 function resizeWindow(event) {
+	//alert($("#content_container").height() + ' ' + $(window).height());
 	if($("#content_container").height() > $(window).height()) {
 		$("#map").height($("#content_container").height() + 40);
 		google.maps.event.trigger(map, 'resize');
