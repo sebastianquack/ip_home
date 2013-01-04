@@ -15,10 +15,10 @@
 
 <div id="content_container">
 
-	<% unless request.path.include?('admin') %>
-		<div id="main_navigation">
+	<% if request.path.include?('admin') %>
+		<%= render :partial => "layouts/admin_menu" %>	
+	<% else %>
 			<%= render :partial => "layouts/navigation" %>
-		</div>
 	<% end %>
 	
 	<div id="main_content">
