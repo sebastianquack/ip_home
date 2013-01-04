@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229133052) do
+ActiveRecord::Schema.define(:version => 20130104231854) do
 
   create_table "events", :force => true do |t|
     t.date     "date"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20121229133052) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "image_width"
+    t.integer  "image_height"
   end
 
   create_table "map_positions", :force => true do |t|
