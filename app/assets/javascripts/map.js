@@ -2,9 +2,13 @@ mapDragging = false;
 defaultMapCenter = {lat:52.516412, lng:13.402964}; //default value
 
 function update_map() {
+
 		$.getJSON(baseURL() + 'map/get_position', function(position) {
 			if(!mapDragging) {
-				map.panTo(new google.maps.LatLng(position.lat, position.lng));
+				if(currentPositionId != position.id) {
+					map.panTo(new google.maps.LatLng(position.lat, position.lng));
+					currentPositionId = position.id;
+				} 
 			}
 		});
 }
@@ -29,25 +33,24 @@ function load_map() {
           mapTypeId: google.maps.MapTypeId.SATELLITE
         };
 	  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+		currentPositionId = position.id;
+		
 	  google.maps.event.addListener(map, 'dragstart', function() { mapDragging = true; });
 	  google.maps.event.addListener(map, 'dragend', mapMoved);
-
 	  setInterval("update_map()", 2000);
 	});
 
-	setTimeout(resizeWindow, 200);
 	$(window).resize(resizeWindow);
 }
 
 function resizeWindow(event) {
-	//alert($("#content_container").height() + ' ' + $(window).height());
-	if($("#content_container").height() > $(window).height()) {
-		$("#map").height($("#content_container").height() + 40);
-		google.maps.event.trigger(map, 'resize');
+	var minHeight = $('#content_container').height() + 100;
+	if($(document).height() > minHeight) {
+		$("#map").height($(document).height());
 	} else {
-		$("#map").height($(window).height());
-		google.maps.event.trigger(map, 'resize');
+		$("#map").height(minHeight);
 	}
+	google.maps.event.trigger(map, 'resize');
 }
 
 function mapMoved() {

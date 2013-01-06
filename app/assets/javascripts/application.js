@@ -38,7 +38,6 @@ function reset_content_events() {
 					History.pushState(null, document.title, $(this).attr("href"));
 		});
 		resizeWindow();
-
 }
 
 (function(window,undefined){
