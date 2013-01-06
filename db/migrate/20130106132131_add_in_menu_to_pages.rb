@@ -1,6 +1,6 @@
 class AddInMenuToPages < ActiveRecord::Migration
   def up
-  	add_column :pages, :in_menu, :number
+  	add_column :pages, :in_menu, :integer
   end
   
   def down

@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20130106132131) do
     t.datetime "updated_at", :null => false
     t.string   "title_de"
     t.text     "content_de"
-    t.decimal  "in_menu"
+    t.integer  "in_menu"
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
