@@ -1,15 +1,19 @@
-<h1>Project Gallery</h1>
+<h1><%= t('project_gallery_headline') %></h1>
+<%= render 'projects/gallery_intro' %>
+
+<table>
 <% @projects.each do |project| %>
-	<p>
+<tr>
+<td>
 		<% if project.image %>
 			<%= image_tag project.image.image.url(:thumb) %>
-			<br/>
 		<% end %>
-		<%= link_to project.title, public_project_url(project), :class=>'content_ajax' %><br/> 
+</td>
+<td>
+		<%= link_to project.title, public_project_url(project), :class=>'content_ajax large_link' %><br/> 
 		<%= project.description_short %><br/>
 		Keywords: <%= render 'taglist', :tags => project.tags %>
-	</p>
+</td>
+</tr>
 <% end %>
-
-<%= link_to t("project_list"), public_projects_list_url, :class=>"content_ajax" %>
-
+</table>

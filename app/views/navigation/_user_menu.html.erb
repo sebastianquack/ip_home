@@ -1,12 +1,12 @@
-<p>
-	<%= t("choose_language") %><br/>
+<div class="menu_section">
+	<div class="menu_label"><%= t("choose_language") %></div>
 	<%= render 'navigation/language_selector' %>
-</p>
+</div>
 
-<%= t("events_upcoming") %><br/>
+<span class="menu_large"><%= t("events_upcoming") %></a></span><br/>
 <%= render 'events/upcoming', :events => (Event.all :order=>'date ASC', :limit=>3) %>
 
-<ul>
+<ul id="main_menu">
 	<li><%= link_to t("project_gallery"), public_projects_gallery_url, :class=>"nav_ajax" %>
 	<li><%= link_to t("media_items_list"), public_media_items_list_url, :class=>"nav_ajax"	%>
 	<% pages = Page.where("in_menu > 0").order("in_menu ASC")
@@ -15,12 +15,14 @@
 	<% end %>
 </ul>
 
-<p>
-<%= t("follow_us") %><br/>
-<a href="<%= public_page_url('connect') %>" class="nav_ajax"><%= image_tag('email.png'); %></a>
-<a href="http://facebook.com/invisibleplayground"><%= image_tag('facebook.png'); %></a>
-<a href="http://twitter.com/invplayground"><%= image_tag('twitter.png'); %></a>
-<a href="http://invisibleplayground.tumblr.com"><%= image_tag('tumblr.png'); %></a>
-</p>
+<div class="menu_section">
+	<div class="menu_label"><%= t("follow_us") %></div>
+	<div>
+	<a href="<%= public_page_url('connect') %>" class="nav_ajax"><%= image_tag('email.png'); %></a>
+	<a href="http://facebook.com/invisibleplayground"><%= image_tag('facebook.png'); %></a>
+	<a href="http://twitter.com/invplayground"><%= image_tag('twitter.png'); %></a>
+	<a href="http://invisibleplayground.tumblr.com"><%= image_tag('tumblr.png'); %></a>
+	</div>
+</div>
 
 <%= render 'navigation/map_explanation' %>

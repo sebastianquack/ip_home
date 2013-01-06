@@ -1,12 +1,12 @@
-<ul>
+<ul class="event_list">
 <% events.each do |event| %>
 	<li>
 		<%= l event.date, :format=>:short %>
-		<%= event.location %><br/>
+		<%= event.location %>
     <%= link_to event.title, public_event_url(event), :class=>"nav_ajax" %>
 	</li>
 <% end %>
-    <li><%= link_to t("events_list"), public_events_list_url, :class=>"nav_ajax" %></li>
+    <li class="all_events"><%= link_to t("events_list"), public_events_list_url, :class=>"nav_ajax" %></li>
 </ul>
 
 

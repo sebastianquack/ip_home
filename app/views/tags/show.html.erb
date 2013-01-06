@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Projects with keyword <%= @tag.name %></h1>
+<h1><%= t('projects_with_keyword') %> <%= @tag.name %></h1>
 
 <ul>
 <% @tag.projects.each do |project| %>
-	<li><%= link_to project.title, public_project_url(project), :class=>'content_ajax' %></li>
+	<li><%= link_to project.title, public_project_url(project), :class=>'content_ajax large_link' %></li>
 <% end %>
 </ul>

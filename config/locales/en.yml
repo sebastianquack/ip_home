@@ -2,11 +2,16 @@ en:
   de: Deutsch
   en: English
   project_gallery: Projects
+  project_gallery_headline: Project Showcase
   project_list: All Projects
+  projects_headline: All Projects
   events_upcoming: Upcoming
-  events_list: all Events
+  events_list: All Events
+  events_headline: All Events
   media_items_list: In the Media
-  choose_language: Choose your language
+  media_items_headline: In the Media
+  projects_with_keyword: Projects with
+  choose_language: Sprache wählen
   follow_us: Follow us
   time:
     formats:

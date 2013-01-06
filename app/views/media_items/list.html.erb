@@ -1,4 +1,4 @@
-<h1>All media items by project</h1>
+<h1><%= t('media_items_headline') %></h1>
 
 <% @items_by_project.each do |project, items| %>
 	<h2><%= project ? project.title : "General" %></h2>

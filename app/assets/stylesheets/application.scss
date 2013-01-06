@@ -14,7 +14,29 @@
 // CSS Reset
 @import "base.scss";
 
-/* Layout */
+/* General Typography and Colors */
+
+body {
+	font-family: "Helvetica Neue", Arial;
+	font-size: 90%;
+	color: black;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #8A919A;
+}
+
+h1, h2, h3 {
+	font-family: "Helvetica Neue", Arial;
+	font-weight: bold;
+}
+
+p {
+	line-height: 1.2em;
+}
+
+/* General Layout */
 
 #map {
 	position: absolute;
@@ -48,27 +70,65 @@
 	width: 200px;
 	left: 40px;
 	background-color: #fff;
-	padding: 10px 10px 0px 10px;
+	padding: 20px 20px 0px 20px;
 }
 
 #content_container {
 	position: absolute;
 	z-index: 100;
 	top: 30px;
-	width: 600px;
-	left: 300px;
+	width: 550px;
+	left: 320px;
 	background-color: #fff;
-	/*padding: 10px 10px 10px 10px;*/
+	padding: 20px 20px 20px 20px;
 }
 
-/* Typography and Colors */
+/* Navigation */
 
-body {
-	font-family: "Helvetica Neue", Arial;
+.menu_section {
+	margin-bottom: 15px;
 }
 
-h1, h2, h3 {
-	font-family: "Helvetica Neue", Arial;
+ul.event_list li {
+	margin-bottom: 4px;
+	line-height: 16px;
+}
+
+ul.event_list li.all_events a {
+	color: black;
+}
+
+#main_menu li {
+	margin-bottom: 4px;
+}
+
+#main_menu li a {
+	color: black;
+	font-size: 28px;
+	line-height: 30px;
+	font-weight: bold;
+	/*text-transform: uppercase;*/
+}
+
+span.menu_large {
+	color: black;
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: bold;
+	/*text-transform: uppercase;*/
+}
+
+/* Content */
+
+a.large_link {
+	font-size: 28px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+td {
+	vertical-align: top;
+	padding: 0px 12px 20px 12px;
 }
 
 /* Slideshow */
