@@ -70,3 +70,25 @@ body {
 h1, h2, h3 {
 	font-family: "Helvetica Neue", Arial;
 }
+
+/* Slideshow */
+
+#slideshow {
+    position:relative;
+}
+
+#slideshow img {
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0.0;
+}
+
+#slideshow img:first-child {
+    opacity:1.0;
+    position:relative;
+}
+
+#slideshow img.active {
+    opacity:1.0;
+}

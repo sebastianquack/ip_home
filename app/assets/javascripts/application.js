@@ -66,4 +66,5 @@ $(document).ready(function() {
 		load_map();
 		reset_navigation_events();
 		reset_content_events();
+		setInterval( "slideSwitch()", 6000 );
 });
