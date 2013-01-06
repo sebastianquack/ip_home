@@ -1,9 +1,13 @@
 de:
-  project_gallery: Portfolio
+  de: Deutsch
+  en: English
+  project_gallery: Projekte
   project_list: Alle Projekte
-  events_upcoming: Die nächsten Termine
+  events_upcoming: Demnächst
   events_list: alle Termine
-  media_items_list: alle Medienberichte
+  media_items_list: In den Medien
+  choose_language: Sprache wählen
+  follow_us: Auf dem Laufenden bleiben
   date:
     abbr_day_names:
     - So
@@ -39,7 +43,7 @@ de:
       weekday: "%A"
       default: ! '%d.%m.%Y'
       long: '%A, %d. %B %Y'
-      short: '%d. %m. %Y'
+      short: '%d. %m.'
       month_day: '%e. %B'
     month_names:
     - 

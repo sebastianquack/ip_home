@@ -55,9 +55,9 @@ function reset_content_events() {
     // Bind to StateChange Event
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
-	        $('#main_content').load(State.url, reset_content_events);        
+	        $('#content_container').load(State.url, reset_content_events);        
 					var new_locale = window.location.pathname.substr(1, 2);
-      	  $('#main_navigation').load(baseURL() + 'navigation', {'locale': new_locale}, reset_navigation_events);
+      	  $('#navigation_container').load(baseURL() + 'navigation', {'locale': new_locale}, reset_navigation_events);
     });
     
 })(window);

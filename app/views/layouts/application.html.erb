@@ -9,23 +9,23 @@
 </head>
 <body>
 
-<% unless request.path.include?('admin') %>
-	<div id="map"></div>
-<% end %>
-
-<div id="content_container">
-
-	<% if request.path.include?('admin') %>
-		<%= render :partial => "layouts/admin_menu" %>	
-	<% else %>
-			<%= render :partial => "layouts/navigation" %>
+	<% unless request.path.include?('admin') %>
+		<div id="map"></div>
 	<% end %>
+
+	<div id="header"></div>
+
+	<div id="navigation_container">
+		<% if request.path.include?('admin') %>
+			<%= render :partial => "navigation/admin_menu" %>	
+		<% else %>
+			<%= render :partial => "navigation/user_menu" %>
+		<% end %>
+	</div>
 	
-	<div id="main_content">
+	<div id="content_container">
 		<%= yield %>
 	</div>
-
-</div>
 
 </body>
 </html>

@@ -1,0 +1,11 @@
+<select id="language_selector">
+	<% I18n.available_locales.each do |l| %>
+		<option value="<%= l %>"
+			<% if l == I18n.locale %>
+				selected="selected"
+			<% end %>			
+		>
+		<%= t(l) %>
+		</option>
+	<% end %>
+</select>

@@ -1,15 +1,19 @@
 en:
-  project_gallery: Project Gallery
+  de: Deutsch
+  en: English
+  project_gallery: Projects
   project_list: All Projects
-  events_upcoming: Upcoming Events
+  events_upcoming: Upcoming
   events_list: all Events
-  media_items_list: all Media items
+  media_items_list: In the Media
+  choose_language: Choose your language
+  follow_us: Follow us
   time:
     formats:
       hours_minutes: "%l:%M %p"
   date:
       formats:
         weekday: "%A"
-        short: '%e %b %Y'
+        short: '%m/%d'
         long: '%A, %e %B %Y'
         month_day: '%B %e'
