@@ -13,6 +13,7 @@ en:
   projects_with_keyword: Projects
   choose_language: Sprache wählen
   follow_us: Follow us
+  more_info: More info
   time:
     formats:
       hours_minutes: "%l:%M %p"
