@@ -16,12 +16,16 @@
 //= require helpers
 //= require_tree .
 
+update_nav = false;
+
 function reset_navigation_events() {
 		$('#language_selector').unbind('change');
 		$('#language_selector').change(function() {
 				var new_locale = $('#language_selector').val();
 				var new_url =  baseURL() + new_locale + window.location.pathname.substr(3);
-				History.pushState(null, document.title, new_url);				
+				update_nav = true;
+				History.pushState(null, document.title, new_url);
+
 		});
 
 		$('.nav_ajax').unbind('click');
@@ -55,8 +59,11 @@ function reset_content_events() {
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
 	        $('#content_container').load(State.url, reset_content_events);        
-					var new_locale = window.location.pathname.substr(1, 2);
-      	  $('#navigation_container').load(baseURL() + 'navigation', {'locale': new_locale}, reset_navigation_events);
+					if(update_nav) {
+						var new_locale = window.location.pathname.substr(1, 2);
+	      	  $('#navigation_container').load(baseURL() + 'navigation', {'locale': new_locale}, reset_navigation_events);
+	      		update_nav = false;
+	      	}
     });
     
 })(window);
