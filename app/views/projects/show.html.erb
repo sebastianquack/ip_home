@@ -6,7 +6,7 @@
 
 <p><%= @project.description_short %></p>
 
-<p><%= @project.description_long %></p>
+<p><%= formatize @project.description_long %></p>
 
 <ul>
   <li>Keywords: <%= render :partial=>'projects/taglist', :locals=>{:tags => @project.tags} %></li>
