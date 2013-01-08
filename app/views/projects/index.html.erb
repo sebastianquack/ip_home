@@ -2,9 +2,8 @@
 
 <table>
   <tr>
+  	<th>Image</th>
     <th>Title</th>
-    <th>Description short</th>
-    <th>Description long</th>
     <th>Location</th>
     <th>Year</th>
     <th>Client</th>
@@ -19,7 +18,7 @@
   <tr>
 		<td><%= image_tag project.image.image.url(:thumb) if project.image %></td>
     <td><%= project.title %></td>
-    <td><%= project.description_short %></td>
+    <!--td><%= project.description_short %></td-->
     <td><%= project.location %></td>
     <td><%= project.year %></td>
     <td><%= project.client %></td>
