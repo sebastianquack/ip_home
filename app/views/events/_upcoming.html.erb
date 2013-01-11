@@ -1,8 +1,8 @@
 <ul class="event_list">
 <% events.each do |event| %>
 	<li>
-		<%= l event.date, :format=>:short %>
-		<%= event.location %>
+		<%= l event.date, :format=>:short %><%= l event.end_date, :format=>:short_end if event.end_date %>
+		<%= event.location %><br/>
     <%= link_to event.title, public_event_url(event), :class=>"nav_ajax" %>
 	</li>
 <% end %>

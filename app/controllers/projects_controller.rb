@@ -30,7 +30,13 @@ class ProjectsController < ApplicationController
 
 	def list
 		@projects = Project.all
-		@projects_by_year = @projects.group_by { |p| p.year }
+		@projects_by_year = @projects.group_by do |p| 
+			if p.start_date
+				p.start_date.strftime("%Y") 
+			else
+				p.year
+			end
+		end
     respond_to do |format|
       format.html { render :layout => ! request.xhr? }
     end
@@ -72,6 +78,11 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.json
   def update
     @project = Project.find(params[:id])
+
+		unless params[:use_end_date] == "1"
+			params[:project].delete_if{ |key, value| key.match(/^end_date/) }
+			params[:project][:end_date] = nil;
+		end
 
 		@project.tags = [] # empty tags
 		if params[:project][:tag_ids]

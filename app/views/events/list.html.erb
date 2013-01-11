@@ -5,7 +5,7 @@
 	<ul>
 	<% events.each do |event| %>
 		<li>
-			<%= l event.date, :format=>:month_day %>,
+			<%= l event.date, :format=>:month_day %><% if event.end_date %> - <%= l event.end_date, :format=>:month_day%><% end %>,
 			<%= event.location %>,
 	    <%= link_to event.title, public_event_url(event), :class=>'content_ajax' %>
 		</li>

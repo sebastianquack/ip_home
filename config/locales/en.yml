@@ -21,5 +21,6 @@ en:
       formats:
         weekday: "%A"
         short: '%m/%d'
-        long: '%A, %e %B %Y'
+        short_end: '-%m/%d'
+        long: '%e %B %Y'
         month_day: '%B %e'

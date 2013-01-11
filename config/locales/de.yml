@@ -48,8 +48,9 @@ de:
     formats:
       weekday: "%A"
       default: ! '%d.%m.%Y'
-      long: '%A, %d. %B %Y'
+      long: '%d. %B %Y'
       short: '%d.%m.'
+      short_end: '-%d.%m.'
       month_day: '%e. %B'
     month_names:
     - 

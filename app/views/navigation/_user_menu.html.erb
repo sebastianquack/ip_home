@@ -4,7 +4,9 @@
 </div>
 
 <span class="menu_large"><%= t("events_upcoming") %></a></span><br/>
-<%= render 'events/upcoming', :events => (Event.all :order=>'date ASC', :limit=>3) %>
+<%= render 'events/upcoming', :events => (Event.all( 
+														:conditions => ["date > ?", Date.yesterday],
+														:order=>'date ASC', :limit=>3)) %>
 
 <ul id="main_menu">
 	<li><%= link_to t("project_gallery"), public_projects_gallery_url, :class=>"nav_ajax" %>

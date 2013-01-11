@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
 	def list
-		@events = Event.all :order=>'date ASC'
+		@events = Event.all :order=>'date DESC'
 		@events_by_year = @events.group_by { |e| e.date.year }
     respond_to do |format|
       format.html { render :layout => ! request.xhr? }
