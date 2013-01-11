@@ -1,5 +1,11 @@
 <p>
-  <%= @event.location %>, <%= l @event.date, :format=>:long %>,   <%= l @event.time, :format=>:hours_minutes %><br/>
+  <%= @event.location %>,
+	<%= l @event.date, :format=>:long %>
+	<% if @event.end_date %> 
+		- <%= l @event.end_date, :format=>:long%>
+	<% else %>
+		<%= l @event.time, :format=>:hours_minutes %>
+	<% end %>
 </p>
 
 <h1><%= @event.title %></h1>
