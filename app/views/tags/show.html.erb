@@ -2,8 +2,8 @@
 
 <%= formatize @tag.description if @tag.description %>
 
-<ul>
+<table>
 <% @tag.projects.each do |project| %>
-	<li><%= link_to project.title, public_project_url(project), :class=>'content_ajax large_link' %></li>
+	<%= render 'projects/gallery_show_single', :project=>project %>
 <% end %>
-</ul>
+</table>

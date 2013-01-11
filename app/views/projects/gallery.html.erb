@@ -3,17 +3,6 @@
 
 <table>
 <% @projects.each do |project| %>
-<tr>
-<td>
-		<% if project.image %>
-			<%= image_tag project.image.image.url(:thumb) %>
-		<% end %>
-</td>
-<td>
-		<%= link_to project.title, public_project_url(project), :class=>'content_ajax large_link' %><br/> 
-		<%= project.description_short %><br/>
-		Keywords: <%= render 'taglist', :tags => project.tags %>
-</td>
-</tr>
+	<%= render 'projects/gallery_show_single', :project=>project %>
 <% end %>
 </table>
