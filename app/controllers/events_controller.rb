@@ -50,6 +50,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    @use_end_date = false
   end
 
   # POST /events
@@ -72,6 +73,11 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
+
+		unless params[:use_end_date] == "1"
+			params[:event].delete_if{ |key, value| key.match(/^end_date/) }
+			params[:event][:end_date] = nil;
+		end
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
