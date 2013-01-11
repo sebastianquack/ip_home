@@ -30,13 +30,15 @@ class ProjectsController < ApplicationController
 
 	def list
 		@projects = Project.all
-		@projects_by_year = @projects.group_by do |p| 
+		@projects_by_year_unsorted = @projects.group_by do |p| 
 			if p.start_date
 				p.start_date.strftime("%Y") 
 			else
 				p.year
 			end
 		end
+		@projects_by_year = @projects_by_year_unsorted.sort_by { | year, project | year }.reverse!
+
     respond_to do |format|
       format.html { render :layout => ! request.xhr? }
     end
@@ -62,6 +64,11 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+
+		unless params[:use_end_date] == "1"
+			params[:project].delete_if{ |key, value| key.match(/^end_date/) }
+			params[:project][:end_date] = nil;
+		end
 
     respond_to do |format|
       if @project.save

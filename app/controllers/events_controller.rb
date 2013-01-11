@@ -58,6 +58,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
 
+		unless params[:use_end_date] == "1"
+			params[:event].delete_if{ |key, value| key.match(/^end_date/) }
+			params[:event][:end_date] = nil;
+		end
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
