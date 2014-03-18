@@ -14,6 +14,14 @@
   <%= formatize @event.description %>
 </div>
 
-<%= link_to t('more_info'), @event.url if @event.url? %>
+<p>
+<% if @event.direct_to_project && @event.project_id %>
+    <%= link_to t('more_info'), public_project_url(@event.project), :class=>"nav_ajax" %>    
+<% else %>
+    <%= link_to t('more_info'), @event.url if @event.url? %>    
+<% end %>
+</p>
 
+<p>
 <%= link_to 'Edit', edit_event_path(@event) if session[:admin] %>
+</p>

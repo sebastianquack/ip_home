@@ -56,9 +56,14 @@
     <%= f.text_area :description_de %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= f.label :url, "External URL" %>  <%= f.text_field :url %>
   </div>
+  <div class="field">
+  	<%= f.label :project_id, "Project" %>
+		<%= f.select :project_id, Project.order("title_en").collect {|p| [ p.title, p.id ] }, { :include_blank => "None" } %>
+    <%= f.label :direct_to_project %> <%= f.check_box :direct_to_project %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

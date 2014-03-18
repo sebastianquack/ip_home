@@ -3,7 +3,11 @@
 	<li>
 		<%= l event.date, :format=>:short %><%= l event.end_date, :format=>:short_end if event.end_date %>
 		<%= event.location %><br/>
-    <%= link_to event.title, public_event_url(event), :class=>"nav_ajax" %>
+    <% if event.direct_to_project && event.project_id %>
+      <%= link_to event.title, public_project_url(event.project), :class=>"nav_ajax" %>    
+    <% else %>
+      <%= link_to event.title, public_event_url(event), :class=>"nav_ajax" %>
+    <% end %>
 	</li>
 <% end %>
     <li class="all_events"><%= link_to t("events_list"), public_events_list_url, :class=>"nav_ajax" %></li>
