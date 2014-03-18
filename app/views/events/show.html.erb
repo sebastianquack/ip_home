@@ -15,3 +15,5 @@
 </div>
 
 <%= link_to t('more_info'), @event.url if @event.url? %>
+
+<%= link_to 'Edit', edit_event_path(@event) if session[:admin] %>

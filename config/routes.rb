@@ -6,6 +6,7 @@ IpHome::Application.routes.draw do
 
   scope "admin" do
 		get "/", :controller => :admin, :action => :index
+    get "/logout", :controller => :admin, :action => :logout, :as => 'logout'
 		resources :pages
 		resources :images
 		resources :projects
