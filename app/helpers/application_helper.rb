@@ -21,6 +21,10 @@ module ApplicationHelper
       end      
     }
 
+    text = text.gsub(/<a file:(.*?)>(.*?)<\/a>/) {
+      link_to "#{$2}", Rails.configuration.static_storage + "#{$1}", :target => "_blank" 
+    }
+      
     text = text.gsub(/<a page:(.*?)>(.*?)<\/a>/) {
       begin
         page = Page.find("#{$1}")

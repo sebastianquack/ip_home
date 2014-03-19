@@ -62,5 +62,7 @@ module IpHome
 		config.admin_user = "admin"
     config.admin_password = "vkvdb28"
     
+    config.static_storage = "https://s3-eu-west-1.amazonaws.com/playpublik-files/"
+    
   end
 end
