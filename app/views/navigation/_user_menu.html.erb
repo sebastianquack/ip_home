@@ -3,10 +3,13 @@
 	<%= render 'navigation/language_selector' %>
 </div>
 
-<span class="menu_large"><%= t("events_upcoming") %></a></span><br>
-<%= render 'events/upcoming', :events => (Event.all( 
-														:conditions => ["date > ?", Date.yesterday],
-														:order=>'date ASC', :limit=>3)) %>
+<% events = Event.all( :conditions => ["date > ?", Date.yesterday],
+											 :order=>'date ASC', :limit=>4) %>
+
+<% if events.length > 0 %>
+  <span class="menu_large"><%= t("events_upcoming") %></a></span><br>
+  <%= render 'events/upcoming', :events => events %>
+<% end %>
 
 <span class="menu_large"><%= t("project_gallery") %></span><br>
 <ul class="event_list">
