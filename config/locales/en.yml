@@ -14,7 +14,9 @@ en:
   choose_language: Sprache wählen
   follow_us: Follow us
   more_info: More info
-  local_partner: Local partner
+  project_partner: Project partner
+  project_date: Date
+  project_location: Location
   time:
     formats:
       hours_minutes: "%l:%M %p"
