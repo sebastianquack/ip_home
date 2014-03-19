@@ -25,7 +25,7 @@ function load_map() {
 		}
 	
 	  var mapOptions = {
-  	      zoom: 18,
+  	      zoom: 17,
           scrollwheel: false,
 			    disableDoubleClickZoom: true,
 					disableDefaultUI: true,
