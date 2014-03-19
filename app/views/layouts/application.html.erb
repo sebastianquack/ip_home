@@ -21,7 +21,7 @@
 		<% end %>
 	</div>
 	
-	<div id="content_container">
+	<div id="content_container" <% if request.path.include?('admin') %> class="admin_content" <% end %>>
 		<%= yield %>
 	</div>
 
