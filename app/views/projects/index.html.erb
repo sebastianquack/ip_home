@@ -1,13 +1,10 @@
+<%= link_to 'New Project', new_project_path %>
 <h1>Listing projects</h1>
 
 <table>
   <tr>
   	<th>Image</th>
     <th>Title</th>
-    <th>Location</th>
-    <th>Year</th>
-    <th>Client</th>
-    <th>Website</th>
     <th>In gallery</th>
     <th></th>
     <th></th>
@@ -18,11 +15,6 @@
   <tr>
 		<td><%= image_tag project.image.image.url(:thumb) if project.image %></td>
     <td><%= project.title %></td>
-    <!--td><%= project.description_short %></td-->
-    <td><%= project.location %></td>
-    <td><%= project.year %></td>
-    <td><%= project.client %></td>
-    <td><%= project.website %></td>
     <td><%= project.in_gallery %></td>
     <td><%= link_to 'Show', public_project_url(project) %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
@@ -31,6 +23,3 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Project', new_project_path %>

@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.order('slug ASC').all
 
     respond_to do |format|
       format.html # index.html.erb

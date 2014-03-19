@@ -2,7 +2,7 @@ class MediaItemsController < ApplicationController
   # GET /media_items
   # GET /media_items.json
   def index
-    @media_items = MediaItem.all
+    @media_items = MediaItem.order('date DESC').all
 
     respond_to do |format|
       format.html # index.html.erb

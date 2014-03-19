@@ -1,10 +1,10 @@
+<%= link_to 'New Media item', new_media_item_path %>
 <h1>Listing media_items</h1>
 
 <table>
   <tr>
     <th>Source</th>
     <th>Date</th>
-    <th>Quote</th>
     <th>Url</th>
     <th></th>
     <th></th>
@@ -15,15 +15,10 @@
   <tr>
     <td><%= media_item.source %></td>
     <td><%= media_item.date %></td>
-    <td><%= media_item.quote %></td>
-    <td><%= media_item.url %></td>
+    <td><%= truncate(media_item.url, :length => 30) %></td>
     <td><%= link_to 'Show', media_item %></td>
     <td><%= link_to 'Edit', edit_media_item_path(media_item) %></td>
     <td><%= link_to 'Destroy', media_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Media item', new_media_item_path %>

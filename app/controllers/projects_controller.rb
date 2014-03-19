@@ -2,7 +2,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.where('in_gallery >= 0').order('in_gallery ASC, title_en ASC').all
+    other_projects = Project.where(:in_gallery => nil).order('title_en ASC').all
+    @projects = @projects.to_a
+    @projects += other_projects.to_a
 
     respond_to do |format|
       format.html # index.html.erb
