@@ -5,7 +5,11 @@
 		<% end %>
 </td>
 <td>
-		<%= link_to project.title, public_project_url(project), :class=>'content_ajax large_link' %><br/> 
+    <% if project.direct_to_url %>
+      <a href="<%= project.website %>" target="_blank"><%= project.title %></a>
+    <% else %>
+        <a href="<%= public_project_url(project) %>" class="nav_ajax"><%= project.title %></a>
+    <% end %><br/> 
 		<%= project.description_short %><br/>
-		Keywords: <%= render 'projects/taglist', :tags => project.tags %>
+		<!-- Keywords: <%= render 'projects/taglist', :tags => project.tags %> -->
 </td>

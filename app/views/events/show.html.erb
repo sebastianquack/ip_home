@@ -16,7 +16,7 @@
 
 <p>
 <% if @event.direct_to_project && @event.project_id %>
-    <%= link_to t('more_info'), public_project_url(@event.project), :class=>"nav_ajax" %>    
+    <%= link_to t('more_info'), public_project_url(event.project), :class=>"nav_ajax" %>    
 <% else %>
     <%= link_to t('more_info'), @event.url if @event.url? %>    
 <% end %>

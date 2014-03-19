@@ -1,0 +1,10 @@
+
+      <% if event.disable_link %>
+        <%= text %>
+      <% elsif event.direct_to_url && event.url %>
+        <%= link_to text, event.url, :target => "_blank" %>    
+      <% elsif event.direct_to_project && event.project_id %>
+        <%= link_to text, public_project_url(event.project), :class=>"nav_ajax" %>    
+      <% else %>
+        <%= link_to text, public_event_url(event), :class=>"nav_ajax" %>
+      <% end %>

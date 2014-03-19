@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20140318232626) do
     t.date     "end_date"
     t.integer  "project_id"
     t.boolean  "direct_to_project", :default => false
+    t.boolean  "direct_to_url",     :default => false
+    t.boolean  "disable_link",      :default => false
   end
 
   create_table "images", :force => true do |t|
@@ -90,11 +92,12 @@ ActiveRecord::Schema.define(:version => 20140318232626) do
     t.string   "client"
     t.string   "website"
     t.integer  "in_gallery"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.integer  "image_id"
     t.date     "start_date"
     t.date     "end_date"
+    t.boolean  "direct_to_url",        :default => false
   end
 
   create_table "projects_tags", :id => false, :force => true do |t|

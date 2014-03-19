@@ -9,7 +9,7 @@
 <p><%= formatize @project.description_long %></p>
 
 <ul>
-  <li>Keywords: <%= render :partial=>'projects/taglist', :locals=>{:tags => @project.tags} %></li>
+  <!--li>Keywords: <%= render :partial=>'projects/taglist', :locals=>{:tags => @project.tags} %></li-->
   <li>Date: 
   	<% if @project.start_date %>
 	  	<%=	l @project.start_date, :format=>:long %><% if @project.end_date %> - <%= l @project.end_date, :format=>:long %><% end %>
@@ -18,11 +18,12 @@
   	<% end %>
   <li>Location: <%= @project.location %></li>
   <% if @project.client? %>
-		<li>Client: <%= @project.client %></li>
+		<li><%= t('local_partner') %>: <%= @project.client %></li>
 	<% end %>
   <li>Website: <%= link_to @project.website, @project.website %></li>	
 </ul>
 
+<!--
 <% if @project.media_items.size > 0 %>
 	<h3><%= t('media_items_headline') %></h3>
 	<ul>
@@ -33,3 +34,8 @@
 		<% end %>
 	</ul>
 <% end %>
+-->
+
+<p>
+<%= link_to 'Edit', edit_project_path(@project) if session[:admin] %>
+</p>
