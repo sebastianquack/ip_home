@@ -3,7 +3,7 @@ module ApplicationHelper
   def formatize text
     return "" if text.nil?
     
-    text = text.gsub(/<image (\S+)>/) {
+    text = text.gsub(/<image (\d+)>/) {
       begin
         img = Image.find("#{$1}")
         image_tag(img.image.url, :alt => img.title, :width => img.image_width, :height => img.image_height)
@@ -11,7 +11,16 @@ module ApplicationHelper
         "<strong>Image with id #{$1} not found.</strong>"
       end      
     }
-    
+
+    text = text.gsub(/<image (\d+):(.*?)>/) {
+      begin
+        img = Image.find("#{$1}")
+        image_tag(img.image.url("#{$2}"), :alt => img.title)
+      rescue
+        "<strong>Image with id #{$1} not found.</strong>"
+      end      
+    }
+
     text = text.gsub(/<a page:(.*?)>(.*?)<\/a>/) {
       begin
         page = Page.find("#{$1}")
