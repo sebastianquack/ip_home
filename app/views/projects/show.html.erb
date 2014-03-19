@@ -1,12 +1,10 @@
 <% if @project.image %>
-  <%= image_tag @project.image.image.url, :width=>@project.image.image_width, :height=>@project.image.image_height %>
+	<%= image_tag @project.image.image.url(:large) %>
 <% end %>
 
 <h1><%= @project.title %></h1>
 
 <p><%= @project.description_short %></p>
-
-<p><%= formatize @project.description_long %></p>
 
 <ul>
   <!--li>Keywords: <%= render :partial=>'projects/taglist', :locals=>{:tags => @project.tags} %></li-->
@@ -26,6 +24,8 @@
       <li>Website: <%= link_to @project.website, @project.website %></li>	
     <% end %>
 </ul>
+
+<p><%= formatize @project.description_long %></p>
 
 <!--
 <% if @project.media_items.size > 0 %>
