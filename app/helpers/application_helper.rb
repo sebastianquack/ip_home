@@ -30,7 +30,7 @@ module ApplicationHelper
         page = Page.find("#{$1}")
         link_to "#{$2}", public_page_url(page), :class => "nav_ajax" 
       rescue
-        "<strong>Page with id #{$1} not found.</strong>"
+        "#{$2}"
       end      
     }
 
