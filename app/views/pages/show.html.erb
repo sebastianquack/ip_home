@@ -8,3 +8,6 @@
   <%= formatize @page.content %>
 </div>
 
+<p>
+<%= link_to 'Edit', edit_page_path(@page) if session[:admin] %>
+</p>
