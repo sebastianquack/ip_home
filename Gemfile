@@ -51,3 +51,6 @@ gem 'cocaine', '0.3.2' # new version of cocaine used in paperclip has bug
 
 # To use debugger
 # gem 'debugger'
+
+gem 'newrelic_rpm'
+
