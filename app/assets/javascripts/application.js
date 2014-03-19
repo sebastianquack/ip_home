@@ -16,8 +16,6 @@
 //= require helpers
 //= require_tree .
 
-update_nav = false;
-
 function reset_navigation_events() {
 		$('#language_selector').unbind('change');
 		$('#language_selector').change(function() {
@@ -33,15 +31,8 @@ function reset_navigation_events() {
 				  event.preventDefault();
 					History.pushState(null, document.title, $(this).attr("href"));
 		});
-}
-
-function reset_content_events() {
-		$('.content_ajax').unbind('click');
-		$('.content_ajax').click(function(event) {
-				  event.preventDefault();
-					History.pushState(null, document.title, $(this).attr("href"));
-		});
-		resizeWindow();
+    
+    resizeWindow(null);
 }
 
 (function(window,undefined){
@@ -58,19 +49,15 @@ function reset_content_events() {
     // Bind to StateChange Event
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
-	        $('#content_container').load(State.url, reset_content_events);        
-					if(update_nav) {
-						var new_locale = window.location.pathname.substr(1, 2);
-	      	  $('#navigation_container').load(baseURL() + 'navigation', {'locale': new_locale}, reset_navigation_events);
-	      		update_nav = false;
-	      	}
+	        $('#content_container').load(State.url, reset_navigation_events);        
+					var new_locale = window.location.pathname.substr(1, 2);
+	      	$('#navigation_container').load(baseURL() + 'navigation', {'locale': new_locale}, reset_navigation_events);
     });
     
 })(window);
 
 $(document).ready(function() {
-		load_map();
-		reset_navigation_events();
-		reset_content_events();
+	  reset_navigation_events();
+    load_map();
 		setInterval( "slideSwitch()", 6000 );
 });

@@ -41,6 +41,7 @@ function load_map() {
 	});
 
 	$(window).resize(resizeWindow);
+  resizeWindow(null);
 }
 
 function resizeWindow(event) {
