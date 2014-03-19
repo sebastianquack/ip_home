@@ -69,6 +69,10 @@
 		<%= f.select :image_id, Image.order("title, image_file_name").collect {|i| [ i.filename_and_title, i.id ] }, { :include_blank => "None" } %>
 	</div>
   <div class="field">
+  	<%= f.label :main_media_embed, "or embed media instead of image" %><br>
+    <%= f.text_area :main_media_embed %><br>
+	</div>
+  <div class="field">
     <%= f.label :in_gallery %><br />
     <%= f.number_field :in_gallery %>
   </div>
