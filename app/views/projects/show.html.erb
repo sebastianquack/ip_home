@@ -10,17 +10,21 @@
 
 <ul>
   <!--li>Keywords: <%= render :partial=>'projects/taglist', :locals=>{:tags => @project.tags} %></li-->
-  <li>Date: 
   	<% if @project.start_date %>
+    <li>Date: 
 	  	<%=	l @project.start_date, :format=>:long %><% if @project.end_date %> - <%= l @project.end_date, :format=>:long %><% end %>
+    </li>  
   	<% else %>
-  		<%= @project.year %>
   	<% end %>
-  <li>Location: <%= @project.location %></li>
+    <% if @project.location? %>
+      <li>Location: <%= @project.location %></li>
+    <% end %>
   <% if @project.client? %>
 		<li><%= t('local_partner') %>: <%= @project.client %></li>
 	<% end %>
-  <li>Website: <%= link_to @project.website, @project.website %></li>	
+    <% if @project.website? %>
+      <li>Website: <%= link_to @project.website, @project.website %></li>	
+    <% end %>
 </ul>
 
 <!--
