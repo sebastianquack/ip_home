@@ -12,7 +12,7 @@ module ApplicationHelper
       end      
     }
     
-    text = text.gsub(/<a page:(\S+)>(\S+)<\/a>/) {
+    text = text.gsub(/<a page:(.*?)>(.*?)<\/a>/) {
       begin
         page = Page.find("#{$1}")
         link_to "#{$2}", public_page_url(page), :class => "nav_ajax" 
@@ -21,7 +21,7 @@ module ApplicationHelper
       end      
     }
 
-    text = text.gsub(/<a project:(\S+)>(\S+)<\/a>/) {
+    text = text.gsub(/<a project:(.*?)>(.*?)<\/a>/) {
       begin
         project = Project.find("#{$1}")
         link_to "#{$2}", public_project_url(project), :class => "nav_ajax"  
@@ -30,7 +30,7 @@ module ApplicationHelper
       end      
     }
 
-    text = text.gsub(/<a event:(\S+)>(\S+)<\/a>/) {
+    text = text.gsub(/<a event:(.*?)>(.*?)<\/a>/) {
       begin
         event = Event.find("#{$1}")
         link_to "#{$2}", public_event_url(event), :class => "nav_ajax"  
