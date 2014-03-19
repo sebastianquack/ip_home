@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140319140542) do
+ActiveRecord::Schema.define(:version => 20140319182740) do
 
   create_table "events", :force => true do |t|
     t.date     "date"
@@ -70,11 +70,12 @@ ActiveRecord::Schema.define(:version => 20140319140542) do
     t.string   "title_en"
     t.string   "slug"
     t.text     "content_en"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "title_de"
     t.text     "content_de"
     t.integer  "in_menu"
+    t.boolean  "subpage",    :default => false
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true

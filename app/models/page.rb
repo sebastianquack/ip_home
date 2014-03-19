@@ -3,5 +3,5 @@ class Page < ActiveRecord::Base
   friendly_id :title_en, use: :slugged
   translates :title, :content
 
-  attr_accessible :content_de, :content_en, :title_de, :title_en, :in_menu, :slug
+  attr_accessible :content_de, :content_en, :title_de, :title_en, :in_menu, :slug, :subpage
 end

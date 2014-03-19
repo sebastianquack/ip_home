@@ -5,8 +5,12 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.order('slug ASC').all
-
+    if params[:subpages]
+      @pages = Page.where(:subpage => true).order('slug ASC').all
+    else
+      @pages = Page.where(:subpage => false).order('slug ASC').all
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pages }
