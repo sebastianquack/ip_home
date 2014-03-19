@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
   attr_accessible :title, :image, :image_width, :image_height
   has_attached_file :image,
-	  :styles => {:medium => "400x400>", :thumb => "100x100>" },
+	  :styles => {:medium => "550x550>", :thumb => "100x100>" },
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
     :url => ':s3_domain_url',
