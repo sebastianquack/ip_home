@@ -1,5 +1,7 @@
 IpHome::Application.routes.draw do
 
+  match '/museum' => redirect("http://momi.invisibleplayground.com")
+
   match '/navigation/' => 'navigation#show'
 	match '/map/update' => 'map#update'
 	match '/map/get_position' => 'map#get_position'
