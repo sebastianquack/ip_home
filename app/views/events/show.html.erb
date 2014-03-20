@@ -24,4 +24,8 @@
 
 <p>
 <%= link_to 'Edit', edit_event_path(@event) if session[:admin] %>
+<% if request.path.include?('admin') %>
+  | <%= link_to 'Show public', public_event_path(@event) if session[:admin] %>
+<% end %>
+
 </p>

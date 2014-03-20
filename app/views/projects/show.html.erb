@@ -44,4 +44,7 @@
 
 <p>
 <%= link_to 'Edit', edit_project_path(@project) if session[:admin] %>
+<% if request.path.include?('admin') %>
+  | <%= link_to 'Show public', public_project_path(@project) if session[:admin] %>
+<% end %>
 </p>

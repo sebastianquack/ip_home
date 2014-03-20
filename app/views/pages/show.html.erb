@@ -10,4 +10,8 @@
 
 <p>
 <%= link_to 'Edit', edit_page_path(@page) if session[:admin] %>
+<% if request.path.include?('admin') %>
+  | <%= link_to 'Show public', public_page_path(@page) if session[:admin] %>
+<% end %>
+
 </p>
