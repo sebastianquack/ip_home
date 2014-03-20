@@ -23,7 +23,7 @@
 		<li><%= t('project_partner') %>: <%= @project.client %></li>
 	<% end %>
     <% if @project.website? %>
-      <li>Website: <%= link_to @project.website, @project.website %></li>	
+      <li>Website: <%= link_to @project.website, @project.website, :target => "_blank" %></li>	
     <% end %>
 </ul>
 
