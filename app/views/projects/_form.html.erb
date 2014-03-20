@@ -40,14 +40,14 @@
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :start_date %><br />
+    <%= f.label :start_date %>
     <%= f.date_select :start_date %>
-  </div>
-    <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
+    <%= f.label :ongoing %>
+    <%= f.check_box :ongoing %>
   </div>
   <div class="field">
+    <%= f.label :end_date %>
+    <%= f.date_select :end_date %>
     Use end date? <%= 
     	if @project.end_date 
 	    	check_box_tag "use_end_date", "1", true

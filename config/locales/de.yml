@@ -17,7 +17,7 @@ de:
   project_partner: Projekt-Partner
   project_date: Datum
   project_location: Ort
-  
+  ongoing_since: seit  
   date:
     abbr_day_names:
     - So

@@ -12,7 +12,12 @@
   <!--li>Keywords: <%= render :partial=>'projects/taglist', :locals=>{:tags => @project.tags} %></li-->
   	<% if @project.start_date %>
     <li><%= t('project_date') %>: 
-	  	<%=	l @project.start_date, :format=>:long %><% if @project.end_date %> - <%= l @project.end_date, :format=>:long %><% end %>
+      <% if @project.ongoing %>
+      	 <%= t('ongoing_since') + " " +	(l @project.start_date, :format=>:long) %>
+      <% else %>
+        <%=	l @project.start_date, :format=>:long %>
+        <% if @project.end_date %> - <%= l @project.end_date, :format=>:long %> <% end %>
+      <% end %>
     </li>  
   	<% else %>
   	<% end %>

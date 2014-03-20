@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140319182740) do
+ActiveRecord::Schema.define(:version => 20140320104413) do
 
   create_table "events", :force => true do |t|
     t.date     "date"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20140319182740) do
     t.date     "end_date"
     t.boolean  "direct_to_url",        :default => false
     t.text     "main_media_embed"
+    t.boolean  "ongoing",              :default => false
   end
 
   create_table "projects_tags", :id => false, :force => true do |t|

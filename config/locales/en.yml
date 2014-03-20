@@ -17,6 +17,7 @@ en:
   project_partner: Project partner
   project_date: Date
   project_location: Location
+  ongoing_since: ongoing since
   time:
     formats:
       hours_minutes: "%l:%M %p"
