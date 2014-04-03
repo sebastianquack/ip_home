@@ -3,7 +3,9 @@ class Image < ActiveRecord::Base
   has_attached_file :image,
 	  :styles => {:medium => "550x550>", :thumb => "100x100>" },
     :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
+    :bucket         => ENV['S3_IP_HOME_BUCKET'],
+    :s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
+                         :secret_access_key => ENV['S3_SECRET'] },
     :url => ':s3_domain_url',
     :path => "images/:id/:style/image.:extension"
 
