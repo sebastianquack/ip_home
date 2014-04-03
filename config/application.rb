@@ -60,7 +60,7 @@ module IpHome
     config.assets.version = '1.0'
     
 		config.admin_user = "admin"
-    config.admin_password = "vkvdb28"
+    config.admin_password = "vkvdb27+"
     
     config.static_storage = "https://s3-eu-west-1.amazonaws.com/iphome-files/"
     
