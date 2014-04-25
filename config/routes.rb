@@ -15,6 +15,7 @@ IpHome::Application.routes.draw do
 		resources :tags
 		resources :events
 		resources :media_items
+    resources :map_positions
   end
 
   scope ":locale", :locale => /en|de/, :as => :public do

@@ -1,0 +1,2 @@
+module MapPositionsHelper
+end

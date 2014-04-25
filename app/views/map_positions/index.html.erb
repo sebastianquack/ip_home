@@ -1,0 +1,30 @@
+<%= link_to 'New Map position', new_map_position_path %>
+
+<h1>Listing map_positions</h1>
+
+<table>
+  <tr>
+    <th>lat</th>
+    <th>lng</th>
+    <th>ip</th>
+    <th>created</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @map_positions.each do |map_position| %>
+  <tr>
+    <td><%= map_position.lat %></td>
+    <td><%= map_position.lng %></td>
+    <td><%= map_position.ip %></td>
+    <td><%= map_position.created_at %></td>
+    <td><%= link_to 'Show', map_position %></td>
+    <td><%= link_to 'Edit', edit_map_position_path(map_position) %></td>
+    <td><%= link_to 'Destroy', map_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
